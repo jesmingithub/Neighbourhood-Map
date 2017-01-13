@@ -1,0 +1,104 @@
+#map {
+    height: 100%;
+}
+* {
+    box-sizing: border-box;
+}
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 5px;
+}
+header {
+    width: 100%;
+    height: 40px;
+    background-color: #157991;
+    font-family: inherit;
+    font-style: italic;
+    font-size: 30px;
+    color: white;
+    text-align: center;
+    text-indent: inherit;
+}
+#iw-container .iw-title {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    padding: 5px;
+    background-color: #157991;
+    color: white;
+    margin: 1px;
+    border-radius: 1px 1px 0 0;
+}
+.marker-content {
+    font-style: italic;
+    font-size: 14px;
+    font-family: monospace;
+    background-color: #f9f9f9;
+}
+.button div {
+    position: fixed;
+    padding-right: 8px;
+    margin-top: -0.50em;
+    line-height: 1.2;
+    font-size: 18px;
+    font-weight: 200;
+    vertical-align: middle;
+    z-index: 1;
+}
+.button span {
+    display: block;
+    margin-left: 2px;
+    width: 35px;
+    height: 5px;
+    margin: 4px 0;
+    background-color: #157991;
+    z-index: 1;
+}
+.sidemenu {
+    background-color: #157991;
+    height: 83%;
+    width: 330px;
+    display: block;
+    position: fixed;
+    padding-top: 60px;
+    margin-top: 50px;
+    z-index: 1;
+    transform: translateX(-105%);
+    overflow-x: hidden;
+    bottom: 0;
+    transition: 0.3s;
+}
+.searchhotel{
+    font-size: 20px;
+    font-family: fantasy;
+    text-align: center;
+}
+.select {
+    color: white;
+    font-size: 20px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+.filter_input {
+    padding: 5px;
+    width: 100%;
+}
+.form {
+  width: 80%;
+  margin-left: 15px;
+}
+.list {
+    color: black;
+    font-size: 18px;
+}
+.list-content {
+    padding-bottom: 15px;
+    color: white;
+}
+.expand {
+    transform: translateX(0);
+    align-items: flex-end;
+}

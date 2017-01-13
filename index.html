@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+    <title>My Map</title>
+</head>
+
+<body>
+    <hr>
+    <header>Five Star Hotels in Kochi</header>
+    <hr>
+    <!--Hamburger Button Initialisation -->
+    <div class="button" id="button">
+        <div></div>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <!--Side search bar structure -->
+    <div class='sidemenu'>
+        <div id="searchhotel">
+            <div class="select"> Select Your Favourite Hotel </div>
+            <form class="form">
+                <input type="input" class="filter_input" placeholder="Type your Fav Hotel here" data-bind="textInput:filterquery">
+            </form>
+            <ul class="list" data-bind="foreach: filter">
+                <li class="list-content" data-bind="text:title, click:$parent.callMarker"></li>
+            </ul>
+        </div>
+    </div>
+    <div id="map"></div>
+
+    <body>
+        <!--Linking js files to html file -->
+        <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+        <script src="js/knockout-3.4.1.js"></script>
+        <script src="js/script.js"></script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCEbfZurAjXg_LAFqGuwpnZiwtNbA1uc1Y&v=3&callback=initMap" onerror="AlertMsg()"></script>
+
+</html>
