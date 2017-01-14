@@ -356,16 +356,19 @@ function showMarkerInfo(marker, markerInfo) {
     var loc = lat + ',' + lng;
     //foursquare api
     var url = 'https://api.foursquare.com/v2/venues/search?v=20170112&ll=' + lat + ',' + lng + '&intent=checkin&client_id=CSUKNDDOEALR22YXZXTNDH2MR4IAZTEDF0U0KYXHBRII215X&client_secret=3RDG2MW0J0P4NP23RXTMPV0QEUZ0UUXV2PVZGUDWK3S53KWA';
+    var checkIn;
+    var siteUrl;
+    var address;
     //sending Ajax request
     $.ajax({
         url: url,
         dataType: "jsonp",
     }).done(function(info) { //Accessing info using Four Square
-        var address = info.response.venues[0].location.address + ',' + info.response.venues[0].location.city;
+        info.response.venues[0].location.address&&info.response.venues[0].location.city?address = info.response.venues[0].location.address + ',' + info.response.venues[0].location.city : address='Address is unavailable';
         console.log(address);
-        var checkIn = info.response.venues[0].stats.checkinsCount;
+        info.response.venues[0].stats.checkinsCount?checkIn = info.response.venues[0].stats.checkinsCount:CheckIn ='Count is unavailable';
         console.log(checkIn);
-        var siteUrl = info.response.venues[0].url;
+        info.response.venues[0].url? siteUrl = info.response.venues[0].url: siteUrl = 'Url is unavailable';
         console.log(siteUrl);
 
         // Checking if the markerInfo is not already opened
@@ -398,6 +401,7 @@ var viewModel = function() {
     var self = this;
     self.hotels = ko.observableArray(hotels);
     this.callMarker = function() {
+        Bouncer(this.marker);
         showMarkerInfo(this.marker, markerInfo);
 
     }; //populating markerInfo on the correct marker
